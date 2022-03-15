@@ -7,7 +7,7 @@
 
 .Wrapper_Navbar {
     @include flexbox-center;
-    padding: 10px 20px;
+    padding: 10px 30px;
 }
 
 .Left_Navbar {
@@ -27,6 +27,7 @@
 }
 
 .Logo_Header {
+    padding-top: 5px;
     font-family: $Leah;
     font-size: 70px;
     color: $color-primary;
@@ -61,21 +62,21 @@ input.Search_Navbar:focus {
 
 #MenuItem_Navbar_1 {
     position: absolute;
-    top: 94px;
-    left: 82%;
+    top: 90px;
+    left: 80%;
     color: white;
 
 }
 
 #MenuItem_Navbar_2 {
     position: absolute;
-    top: 94px;
+    top: 90px;
     left: 88%;
 }
 
 #MenuItem_Navbar_3 {
     position: absolute;
-    top: 92px;
+    top: 90px;
     left: 96%;
     cursor: pointer;
 }

@@ -42,7 +42,7 @@ export default function Navbar() {
                     <div>
                     
                         <div id='MenuItem_Navbar_1'>
-                            <Link to="/Senregistrer" style={{textDecoration: "none",  color: "white"}}><FaUser className="Logo_Register" /> S'inscrire</Link>
+                            <Link to="/Senregistrer" style={{textDecoration: "none",  color: "white"}}><FaUser className="Logo_Register" /> S'enregistrer</Link>
                         </div> 
                     
                         <div id='MenuItem_Navbar_2'>

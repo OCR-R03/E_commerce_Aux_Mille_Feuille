@@ -1,22 +1,44 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector } from 'react-redux'
-import {useHistory, Link} from 'react-router-dom'
-import FacebookIcon from '../../Assets/Logo_Social/f_logo_RGB-Blue_58.png'
-import GoogleIcon from '../../Assets/Logo_Social/logo_google.svg'
+import {useNavigate, Link} from 'react-router-dom'
+import { registerInitiate } from '../../Redux/actions'
 
 const Senregistrer = () => {
 
     const [state, setState] = useState({
-      displayName: "",
+        displayName: "",
         email: "",
         password: "",
         passwordConfirm: ""
     })
 
+    const { currentUser } = useSelector((state) => state.user)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(currentUser) {
+            navigate("/")
+        }
+    }, [currentUser, navigate])
+
+    const dispatch = useDispatch()
+
     const {email, password, displayName, passwordConfirm} = state
-   
-    const handleSubmit = () => {}
-    const handleChange = () => {}
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(password !== passwordConfirm) {
+            return
+        }
+        dispatch(registerInitiate(email, password, displayName))
+        setState({email: "", displayName: "", password: "", passwordConfirm: ""})
+    }
+    
+    const handleChange = (e) => {
+        let {name, value} = e.target;
+        setState({ ...state, [name]: value })
+    }
 
     return (
         <div className='Container'>
@@ -24,7 +46,7 @@ const Senregistrer = () => {
 
                 <form className='form-signup' onSubmit={handleSubmit}>
                     <h1 className='h3 mb-3 font-weight-normal' style={{textAlign: "center", color: 'white'}}>
-                        Se connecter
+                        S'enregistrer
                     </h1>
 
                     <input 
@@ -78,10 +100,11 @@ const Senregistrer = () => {
                     />
 
                     <br/>
-                    
+                    <Link to="/Success">
                     <button className='btn-connecter' type="submit">
                         <i className="fas fa-user-plus"></i> S'enregistrer
                     </button>
+                    </Link>
 
                     <Link to="/Connexion">
                       <i className='fas fa-angle-left'></i> Retour

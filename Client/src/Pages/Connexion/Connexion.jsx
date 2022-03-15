@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector } from 'react-redux'
-import {useHistory, Link} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import FacebookIcon from '../../Assets/Logo_Social/f_logo_RGB-Blue_58.png'
 import GoogleIcon from '../../Assets/Logo_Social/logo_google.svg'
+import { loginInitiate, googleSignInInitiate, fbSignInInitiate } from '../../Redux/actions'
+
 
 const Connexion = () => {
 
@@ -12,10 +14,41 @@ const Connexion = () => {
     })
 
     const {email, password} = state
-    const handleGoogleSignIn = () => {}
-    const handleFBSignIn = () => {}
-    const handleSubmit = () => {}
-    const handleChange = () => {}
+    
+    const { currentUser } = useSelector((state) => state.user)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(currentUser) {
+            navigate("/")
+        }
+    }, [currentUser, navigate])
+
+    const dispatch = useDispatch()
+    
+    const handleGoogleSignIn = () => {
+        dispatch(googleSignInInitiate())
+    }
+    
+    const handleFBSignIn = () => {
+        dispatch(fbSignInInitiate())
+    }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(!email || !password) {
+            return
+        }
+
+        dispatch(loginInitiate(email, password))
+        setState({ email: "", password: ""})
+    }
+    
+    const handleChange = (e) => {
+        let {name, value} = e.target;
+        setState({ ...state, [name]: value })
+    }
 
     return (
         <div className='Container'>
@@ -52,9 +85,11 @@ const Connexion = () => {
 
                     <br/>
                     
+                    <Link to="/SuccessConnexion">
                     <button className='btn-connecter' type="submit">
                         <i className="fas fa-sign-in-alt"></i> Se connecter
                     </button>
+                    </Link>
 
                     <hr />
                     <p style={{textAlign: "center", color: 'white'}}>OU</p>
