@@ -1,0 +1,9 @@
+.Container_annoncement {
+    @include flexbox-center;
+    height: 45px;
+    background-color: $color-secondary;
+    border-bottom: solid 2px $color-primary;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}

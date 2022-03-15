@@ -1,0 +1,39 @@
+/*
+|--------------------------------------------------------------------------
+| Importation des Mixins et Variables
+|--------------------------------------------------------------------------
+*/
+
+@import './Mixins/Mixins.scss';
+@import './Variables/Variables.scss';
+
+/*
+|--------------------------------------------------------------------------
+| Importations Components
+|--------------------------------------------------------------------------
+*/
+
+@import '../Components/Annoncement/Annoncement.scss';
+@import '../Components/Navbar/Navbar.scss';
+
+/*
+|--------------------------------------------------------------------------
+| Importations Pages
+|--------------------------------------------------------------------------
+*/
+
+@import '../Pages/Connexion/Connexion.scss';
+@import '../Pages/Senregistrer/Senregistrer.scss';
+
+/*
+|--------------------------------------------------------------------------
+| Paramètres générale du site web E-Commerce : Aux mille Feuilles
+|--------------------------------------------------------------------------
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $Urbanist;
+}
