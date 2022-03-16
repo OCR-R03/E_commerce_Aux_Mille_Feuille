@@ -1,4 +1,4 @@
-.Container {
+.Container_Connex {
   @include flexbox-center;
   margin: 0;
   padding: 0;
@@ -11,129 +11,62 @@
     background-size: cover;
 }
 
-.logreg-forms {
-    width: 412px;
-    margin: 10vh auto;
-    background-color: transparent;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-  .logreg-forms form {
-    width: 100%;
-    max-width: 410px;
-    padding: 15px;
-    margin: auto;
-  }
-  .logreg-forms .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-  }
-  .logreg-forms .form-control:focus {
-    z-index: 2;
-  }
-  .logreg-forms .form-signin input[type="email"] {
-    margin-top: 30px;
-    margin-bottom: -1px;
-    border-radius: 8px;
-  }
-  .logreg-forms .form-signin input[type="password"] {
-    border-radius: 8px;
-  }
-  
-  .logreg-forms .social-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 390px;
-    margin: 0 auto;
-    margin-bottom: 14px;
-  }
+.mt-5 {
+  font-size: 40px;
+  color: $color-primary;
+}
 
-  .logreg-forms .social-login2 {
-    @include flexbox-center;
-  }
+#inputEmail {
+  border-radius: 5px;
+  height: 2.5em;
+  border: none;
+}
 
-  .logreg-forms .social-btn {
-    font-weight: 100;
-    color: white;
-    width: 190px;
-    font-size: 0.9rem;
-  }
-  
-  .logreg-forms a {
-    display: block;
-    padding-top: 10px;
-    color: lightseagreen;
-  }
-  
-  .logreg-form .lines {
-    width: 200px;
-    border: 1px solid red;
-  }
-  
-  .logreg-forms button[type="submit"] {
-    margin-top: 10px;
-  }
+.social-login {
+  border-radius: 20px;
+  border: 2px solid $color-primary;
+}
 
-  .Logo_Google {
-    margin-right: 5px;
-    height: 18px;
-  }
+.social-login2 {
+  border-radius: 20px;
+  border: 2px solid $color-primary;
+}
 
-  .logreg-forms .google-btn {
-    background-color: transparent;
-    border: 2px solid black;
-    border-radius: 20px;
-    width: 80%;
-  }
+.Logo_Google {
+  margin-left: 15px;
+  margin-right: 5px;
+  height: 18px;
+}
 
-  .Logo_Facebook {
-    height: 22px;
-    margin-right: 5px;
-  }
+.Logo_Facebook {
+  height: 22px;
+  margin-left: 14px;
+  margin-right: 5px;
+}
 
-  .logreg-forms .facebook-btn {
-    background-color: transparent;
-    border: 2px solid black;
-    border-radius: 20px;
-    margin-left: 7px;
-    width: 82%;
-  }
+.btn-connecter {
+  margin-left: 13%;
+  background-color: $color-primary;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+  width: 200px;
+}  
 
-  .btn-connecter {
-    background-color: $color-primary;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    height: 40px;
-    width: 200px;
-    margin-left: 5.5em;
-  }
-  
-  .logreg-forms .form-signup .social-btn {
-    width: 210px;
-  }
-  
-  .logreg-forms .form-signup input {
-    margin-bottom: 2px;
-  }
-  
-  .form-signup .social-login {
-    width: 210px !important;
-    margin: 0 auto;
-  }
+.box_create_account {
+  display: flex;
+  justify-content: center;
+}
 
-  .btn_create_account {
-    margin-left: 4.1em;
-    height: 35px;
-    width: 250px;
-    border: none;
-    border-radius: 20px;
-    background-color: $color-secondary;
-    color: $color-primary;
-  }
+.create_account {
+  height: 35px;
+  width: 250px;
+  border: none;
+  border-radius: 20px;
+  background-color: $color-secondary;
+  color: $color-primary;
+}
   
   /* Mobile */
   
